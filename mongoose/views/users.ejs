@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users List</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="container">
+        <h1>Users List</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Course</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.age %></td>
+                    <td><%= user.course %></td>
+                    <td><%= new Date(user.createdAt).toLocaleDateString() %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/users/new">Add New User</a>
+    </div>
+</body>
+</html>
